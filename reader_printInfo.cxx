@@ -31,6 +31,5 @@ int main() {
    ntuple->PrintInfo();
    // or, equivalently:
    ntuple->PrintInfo(ENTupleInfo::kSummary, std::cout);
-
    ntuple->PrintInfo(ENTupleInfo::kStorageDetails, std::cerr);
 }

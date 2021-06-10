@@ -9,7 +9,7 @@ CXXFLAGS = $(CXXFLAGS_CUSTOM) $(CXXFLAGS_ROOT)
 LDFLAGS = $(LDFLAGS_CUSTOM) $(LDFLAGS_ROOT)
 
 .PHONY = all clean
-all: reader_open reader_printInfo reader_GetEntryRange
+all: reader_open reader_printInfo reader_GetEntryRange reader_EnableMetrics
 
 reader_open: reader_open.cxx
 	g++ $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
@@ -20,5 +20,8 @@ reader_printInfo: reader_printInfo.cxx
 reader_GetEntryRange: reader_GetEntryRange.cxx
 	g++ $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
+reader_EnableMetrics: reader_EnableMetrics.cxx
+	g++ $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
 clean:
-	rm -f reader_open reader_printInfo reader_GetEntryRange
+	rm -f reader_open reader_printInfo reader_GetEntryRange reader_EnableMetrics
